@@ -1,0 +1,59 @@
+{
+  "name": "starter-electron-win7-x86",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "engines": {
+    "node": ">=6.9 <=13.14"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "serve": "nodemon myapp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cikaldev/starter-electron-win7-x86.git"
+  },
+  "keywords": [
+    "nodejs", "electron", "windows 7", "ia32", "x86", "starter-template"
+  ],
+  "author": "Cikal Studio <cikaldev@gmail.com>",
+  "license": "GNU GPL v3.0",
+  "bugs": {
+    "url": "https://github.com/cikaldev/starter-electron-win7-x86/issues"
+  },
+  "homepage": "https://github.com/cikaldev/starter-electron-win7-x86#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nedb-promises": "^5.0.1"
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.9.1",
+    "nodemon": "^2.0.14"
+  },
+  "build": {
+    "appId": "io.github.cikaldev.starter-electron-win7-x86",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "unicode": false,
+      "artifactName": "starter-electron-win7-x86.exe",
+      "perMachine": true
+    },
+    "extraResources": [
+      "data"
+    ]
+  }
+}

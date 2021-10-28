@@ -1,0 +1,35 @@
+<%-include('header')%>
+<div class="page-content">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+      <h3 class="title">Guests Data</h3>
+      <p>
+        <a href="/create" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add New</a>
+      </p>
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">#</th>
+            <th class="mdl-data-table__cell--non-numeric">Name</th>
+            <th class="mdl-data-table__cell--non-numeric">Phone</th>
+            <th class="mdl-data-table__cell--non-numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach((rs, i) => { %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%=i+1%></td>
+            <td class="mdl-data-table__cell--non-numeric"><%=rs.name%></td>
+            <td class="mdl-data-table__cell--non-numeric"><%=rs.phone%></td>
+            <td class="mdl-data-table__cell--non-numeric">
+              <a href="/update/<%=rs._id%>"><i class="material-icons">settings</i></a> &nbsp;
+              <a href="/delete/<%=rs._id%>" onclick="return confirm('Are you sure ?')"><i class="material-icons">delete</i></a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%-include('footer')%>
